@@ -1,0 +1,10 @@
+{
+  "version": "0.1.0",
+  "status": "experimental-engine-implementation",
+  "targets": {
+    "1.13": {"docs_snapshot": "1.13.11", "game_verified": false},
+    "1.14": {"docs_snapshot": "1.14.5-openbeta", "game_verified": false}
+  },
+  "ai_policy": "player-controlled national programme; institute AI construction value zero",
+  "native_ui": "journal entries and production methods; no GUI overrides"
+}

@@ -1,0 +1,47 @@
+ri_focus_production_button = {
+    name = ri_focus_production_button
+    desc = ri_focus_production_button_desc
+    visible = { var:ri_tier > 0 NOT = { var:ri_focus = 1 } }
+    possible = { ri_can_change_focus = yes NOT = { var:ri_focus = 1 } }
+    ai_chance = { base = 0 }
+    effect = {
+        if = {
+            limit = { ri_can_change_focus = yes NOT = { var:ri_focus = 1 } }
+            ri_clear_research = yes
+            set_variable = { name = ri_focus value = 1 }
+            set_variable = { name = ri_focus_cooldown value = 13 }
+        }
+    }
+}
+
+ri_focus_military_button = {
+    name = ri_focus_military_button
+    desc = ri_focus_military_button_desc
+    visible = { var:ri_tier > 0 NOT = { var:ri_focus = 2 } }
+    possible = { ri_can_change_focus = yes NOT = { var:ri_focus = 2 } }
+    ai_chance = { base = 0 }
+    effect = {
+        if = {
+            limit = { ri_can_change_focus = yes NOT = { var:ri_focus = 2 } }
+            ri_clear_research = yes
+            set_variable = { name = ri_focus value = 2 }
+            set_variable = { name = ri_focus_cooldown value = 13 }
+        }
+    }
+}
+
+ri_focus_society_button = {
+    name = ri_focus_society_button
+    desc = ri_focus_society_button_desc
+    visible = { var:ri_tier > 0 NOT = { var:ri_focus = 3 } }
+    possible = { ri_can_change_focus = yes NOT = { var:ri_focus = 3 } }
+    ai_chance = { base = 0 }
+    effect = {
+        if = {
+            limit = { ri_can_change_focus = yes NOT = { var:ri_focus = 3 } }
+            ri_clear_research = yes
+            set_variable = { name = ri_focus value = 3 }
+            set_variable = { name = ri_focus_cooldown value = 13 }
+        }
+    }
+}

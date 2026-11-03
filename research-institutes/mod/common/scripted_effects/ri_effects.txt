@@ -1,0 +1,138 @@
+ri_initialize = {
+    if = {
+        limit = { NOT = { has_variable = ri_schema } }
+        set_variable = { name = ri_schema value = 1 }
+        set_variable = { name = ri_tier value = 0 }
+        set_variable = { name = ri_focus value = 1 }
+        set_variable = { name = ri_paused value = 0 }
+        set_variable = { name = ri_operating value = 0 }
+        set_variable = { name = ri_paid_weeks value = 0 }
+        set_variable = { name = ri_focus_cooldown value = 0 }
+        set_variable = { name = ri_exchange_weeks value = 0 }
+        set_variable = { name = ri_exchange_cooldown value = 0 }
+        set_variable = { name = ri_exchange_interrupted value = 0 }
+        set_variable = { name = ri_block_reason value = 0 }
+    }
+}
+ri_clear_research = {
+    remove_modifier = ri_production_1
+    remove_modifier = ri_production_2
+    remove_modifier = ri_production_3
+    remove_modifier = ri_military_1
+    remove_modifier = ri_military_2
+    remove_modifier = ri_military_3
+    remove_modifier = ri_society_1
+    remove_modifier = ri_society_2
+    remove_modifier = ri_society_3
+}
+ri_charter = {
+    if = {
+        limit = { ri_can_charter = yes }
+        add_treasury = -25000
+        set_variable = { name = ri_tier value = 1 }
+    }
+}
+ri_expand_2 = {
+    if = {
+        limit = { ri_can_expand_2 = yes }
+        add_treasury = -100000
+        set_variable = { name = ri_tier value = 2 }
+    }
+}
+ri_expand_3 = {
+    if = {
+        limit = { ri_can_expand_3 = yes }
+        add_treasury = -250000
+        set_variable = { name = ri_tier value = 3 }
+    }
+}
+ri_downgrade = {
+    if = {
+        limit = { var:ri_tier > 1 }
+        change_variable = { name = ri_tier subtract = 1 }
+        ri_clear_research = yes
+    }
+}
+ri_cancel_exchange = {
+    if = {
+        limit = { var:ri_exchange_weeks > 0 }
+        set_variable = { name = ri_exchange_interrupted value = 1 }
+    }
+    set_variable = { name = ri_exchange_weeks value = 0 }
+    remove_modifier = ri_exchange_network
+}
+ri_pause = {
+    if = {
+        limit = { var:ri_tier > 0 var:ri_paused = 0 }
+        set_variable = { name = ri_paused value = 1 }
+        set_variable = { name = ri_operating value = 0 }
+        set_variable = { name = ri_block_reason value = 3 }
+        ri_clear_research = yes
+        ri_cancel_exchange = yes
+    }
+}
+ri_resume = {
+    if = {
+        limit = { var:ri_tier > 0 var:ri_paused = 1 }
+        set_variable = { name = ri_paused value = 0 }
+        set_variable = { name = ri_block_reason value = 0 }
+    }
+}
+ri_start_exchange = {
+    if = {
+        limit = { ri_can_start_exchange = yes }
+        add_treasury = -10000
+        set_variable = { name = ri_exchange_weeks value = 26 }
+        set_variable = { name = ri_exchange_cooldown value = 78 }
+        set_variable = { name = ri_exchange_interrupted value = 0 }
+    }
+}
+ri_weekly_tick = {
+    ri_initialize = yes
+    if = {
+        limit = { var:ri_focus_cooldown > 0 }
+        change_variable = { name = ri_focus_cooldown subtract = 1 }
+    }
+    if = {
+        limit = { var:ri_exchange_cooldown > 0 }
+        change_variable = { name = ri_exchange_cooldown subtract = 1 }
+    }
+    ri_clear_research = yes
+    remove_modifier = ri_exchange_network
+    set_variable = { name = ri_operating value = 0 }
+    set_variable = { name = ri_block_reason value = 0 }
+    if = {
+        limit = { var:ri_tier > 0 }
+        if = {
+            limit = { var:ri_paused = 1 }
+            set_variable = { name = ri_block_reason value = 3 }
+            ri_cancel_exchange = yes
+        }
+        else_if = {
+            limit = { NOT = { ri_has_staffed_institute = yes } }
+            set_variable = { name = ri_block_reason value = 1 }
+            ri_cancel_exchange = yes
+        }
+        else_if = {
+            limit = { gold_reserves < ri_weekly_cost }
+            set_variable = { name = ri_block_reason value = 2 }
+            ri_cancel_exchange = yes
+        }
+        else = {
+            add_treasury = ri_weekly_debit
+            set_variable = { name = ri_operating value = 1 }
+            change_variable = { name = ri_paid_weeks add = 1 }
+            ri_apply_research = yes
+            if = {
+                limit = { var:ri_exchange_weeks > 0 }
+                if = {
+                    limit = { ri_exchange_allowed = yes gold_reserves >= 500 }
+                    add_treasury = -500
+                    add_modifier = { name = ri_exchange_network days = 8 }
+                    change_variable = { name = ri_exchange_weeks subtract = 1 }
+                }
+                else = { ri_cancel_exchange = yes }
+            }
+        }
+    }
+}

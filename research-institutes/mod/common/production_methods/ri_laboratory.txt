@@ -1,0 +1,36 @@
+pm_ri_laboratory = {
+    texture = "gfx/interface/icons/building_icons/building_university.dds"
+    is_default = yes
+    building_modifiers = {
+        level_scaled = {
+            building_employment_academics_add = 600
+            building_employment_bureaucrats_add = 200
+            building_employment_clerks_add = 200
+        }
+        workforce_scaled = {
+            goods_input_paper_add = 5
+            goods_input_tools_add = 2
+        }
+    }
+    country_modifiers = {
+        workforce_scaled = { country_weekly_innovation_add = 0.4 }
+    }
+}
+pm_ri_research_network = {
+    texture = "gfx/interface/icons/building_icons/building_university.dds"
+    unlocking_technologies = { empiricism }
+    building_modifiers = {
+        level_scaled = {
+            building_employment_academics_add = 700
+            building_employment_bureaucrats_add = 200
+            building_employment_clerks_add = 100
+        }
+        workforce_scaled = {
+            goods_input_paper_add = 10
+            goods_input_tools_add = 5
+        }
+    }
+    country_modifiers = {
+        workforce_scaled = { country_weekly_innovation_add = 0.8 }
+    }
+}

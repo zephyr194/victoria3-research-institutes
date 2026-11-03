@@ -1,0 +1,215 @@
+{
+  "checked_at": "2026-11-03",
+  "game_executed": false,
+  "upstream_commit": "76ba7b4bfc217a61ff19bbe869027b78d5743055",
+  "snapshots": {
+    "1.13.11": {
+      "effects": {
+        "url": "https://raw.githubusercontent.com/Victoria-3-Modding-Co-op/Modding-Digests/76ba7b4bfc217a61ff19bbe869027b78d5743055/1.13.11/docs/effects.log",
+        "sha256": "6801aaaf5e2a1eca562c00ef4ec4060bf61ef370238e0a517496eb2bfa977725",
+        "bindings": {
+          "add_modifier": {
+            "scopes": "country, building, character, institution, interest_group, journal_entry, political_movement, power_bloc, state"
+          },
+          "add_treasury": {
+            "scopes": "country"
+          },
+          "change_variable": {
+            "scopes": "none"
+          },
+          "remove_modifier": {
+            "scopes": "country, building, character, institution, interest_group, journal_entry, political_movement, power_bloc, state"
+          },
+          "set_variable": {
+            "scopes": "none"
+          }
+        }
+      },
+      "triggers": {
+        "url": "https://raw.githubusercontent.com/Victoria-3-Modding-Co-op/Modding-Digests/76ba7b4bfc217a61ff19bbe869027b78d5743055/1.13.11/docs/triggers.log",
+        "sha256": "f7b4f7c8c90f289f2329c15a9a342bf8b67987c6f7c9ad16087e83601c1af871",
+        "bindings": {
+          "always": {
+            "scopes": "none"
+          },
+          "any_scope_building": {
+            "scopes": "country, state"
+          },
+          "gold_reserves": {
+            "scopes": "country"
+          },
+          "has_law": {
+            "scopes": "country"
+          },
+          "has_modifier": {
+            "scopes": "country, building, character, institution, interest_group, journal_entry, political_movement, power_bloc, state"
+          },
+          "has_variable": {
+            "scopes": "none"
+          },
+          "is_at_war": {
+            "scopes": "country"
+          },
+          "is_building_type": {
+            "scopes": "building"
+          },
+          "is_player": {
+            "scopes": "country"
+          },
+          "literacy_rate": {
+            "scopes": "country, pop, state"
+          },
+          "occupancy": {
+            "scopes": "building"
+          }
+        }
+      },
+      "modifiers": {
+        "url": "https://raw.githubusercontent.com/Victoria-3-Modding-Co-op/Modding-Digests/76ba7b4bfc217a61ff19bbe869027b78d5743055/1.13.11/docs/modifiers.log",
+        "sha256": "b915710939901d94a9411912c91552190c29754eed9b06e22c80eb78f0fb67cb",
+        "bindings": {
+          "building_employment_academics_add": {
+            "scopes": "building"
+          },
+          "building_employment_bureaucrats_add": {
+            "scopes": "building"
+          },
+          "building_employment_clerks_add": {
+            "scopes": "building"
+          },
+          "country_bureaucracy_add": {
+            "scopes": "country"
+          },
+          "country_influence_add": {
+            "scopes": "country"
+          },
+          "country_military_tech_research_speed_mult": {
+            "scopes": "country"
+          },
+          "country_production_tech_research_speed_mult": {
+            "scopes": "country"
+          },
+          "country_society_tech_research_speed_mult": {
+            "scopes": "country"
+          },
+          "country_tech_spread_mult": {
+            "scopes": "country"
+          },
+          "country_weekly_innovation_add": {
+            "scopes": "country"
+          },
+          "goods_input_paper_add": {
+            "scopes": "goods"
+          },
+          "goods_input_tools_add": {
+            "scopes": "goods"
+          }
+        }
+      }
+    },
+    "1.14.5-openbeta": {
+      "effects": {
+        "url": "https://raw.githubusercontent.com/Victoria-3-Modding-Co-op/Modding-Digests/76ba7b4bfc217a61ff19bbe869027b78d5743055/1.14.5-openbeta/docs/effects.log",
+        "sha256": "4f72fdc6737d0f76e1c745b06cedfd53faf1775afac67288bb1b924a34c31989",
+        "bindings": {
+          "add_modifier": {
+            "scopes": "country, building, character, institution, interest_group, journal_entry, political_movement, power_bloc, state"
+          },
+          "add_treasury": {
+            "scopes": "country"
+          },
+          "change_variable": {
+            "scopes": "none"
+          },
+          "remove_modifier": {
+            "scopes": "country, building, character, institution, interest_group, journal_entry, political_movement, power_bloc, state"
+          },
+          "set_variable": {
+            "scopes": "none"
+          }
+        }
+      },
+      "triggers": {
+        "url": "https://raw.githubusercontent.com/Victoria-3-Modding-Co-op/Modding-Digests/76ba7b4bfc217a61ff19bbe869027b78d5743055/1.14.5-openbeta/docs/triggers.log",
+        "sha256": "841cc2792563830736cad1421bb42c99e31a69c79f6e4076c66281e07db49318",
+        "bindings": {
+          "always": {
+            "scopes": "none"
+          },
+          "any_scope_building": {
+            "scopes": "country, state"
+          },
+          "gold_reserves": {
+            "scopes": "country"
+          },
+          "has_law": {
+            "scopes": "country"
+          },
+          "has_modifier": {
+            "scopes": "country, building, character, institution, interest_group, journal_entry, political_movement, power_bloc, state"
+          },
+          "has_variable": {
+            "scopes": "none"
+          },
+          "is_at_war": {
+            "scopes": "country"
+          },
+          "is_building_type": {
+            "scopes": "building"
+          },
+          "is_player": {
+            "scopes": "country"
+          },
+          "literacy_rate": {
+            "scopes": "country, pop, state"
+          },
+          "occupancy": {
+            "scopes": "building"
+          }
+        }
+      },
+      "modifiers": {
+        "url": "https://raw.githubusercontent.com/Victoria-3-Modding-Co-op/Modding-Digests/76ba7b4bfc217a61ff19bbe869027b78d5743055/1.14.5-openbeta/docs/modifiers.log",
+        "sha256": "35ee14b5c9893969c961d1a0c433d3460be202122198dcb51e7ee2cc7d1194cb",
+        "bindings": {
+          "building_employment_academics_add": {
+            "scopes": "building"
+          },
+          "building_employment_bureaucrats_add": {
+            "scopes": "building"
+          },
+          "building_employment_clerks_add": {
+            "scopes": "building"
+          },
+          "country_bureaucracy_add": {
+            "scopes": "country"
+          },
+          "country_influence_add": {
+            "scopes": "country"
+          },
+          "country_military_tech_research_speed_mult": {
+            "scopes": "country"
+          },
+          "country_production_tech_research_speed_mult": {
+            "scopes": "country"
+          },
+          "country_society_tech_research_speed_mult": {
+            "scopes": "country"
+          },
+          "country_tech_spread_mult": {
+            "scopes": "country"
+          },
+          "country_weekly_innovation_add": {
+            "scopes": "country"
+          },
+          "goods_input_paper_add": {
+            "scopes": "goods"
+          },
+          "goods_input_tools_add": {
+            "scopes": "goods"
+          }
+        }
+      }
+    }
+  }
+}

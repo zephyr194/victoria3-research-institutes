@@ -1,0 +1,45 @@
+ri_has_staffed_institute = {
+    any_scope_building = {
+        is_building_type = building_ri_research_institute
+        occupancy >= 0.5
+    }
+}
+ri_can_charter = {
+    var:ri_tier = 0
+    ri_has_staffed_institute = yes
+    literacy_rate >= 0.1
+    gold_reserves >= 25000
+}
+ri_can_expand_2 = {
+    var:ri_tier = 1
+    ri_has_staffed_institute = yes
+    var:ri_paid_weeks >= 26
+    literacy_rate >= 0.3
+    gold_reserves >= 100000
+}
+ri_can_expand_3 = {
+    var:ri_tier = 2
+    ri_has_staffed_institute = yes
+    var:ri_paid_weeks >= 78
+    literacy_rate >= 0.5
+    gold_reserves >= 250000
+}
+ri_can_change_focus = {
+    var:ri_tier > 0
+    var:ri_focus_cooldown = 0
+}
+ri_exchange_allowed = {
+    is_at_war = no
+    NOT = { has_law = law_type:law_isolationism }
+    literacy_rate >= 0.2
+}
+ri_can_start_exchange = {
+    var:ri_tier > 0
+    var:ri_paused = 0
+    var:ri_operating = 1
+    ri_has_staffed_institute = yes
+    var:ri_exchange_weeks = 0
+    var:ri_exchange_cooldown = 0
+    ri_exchange_allowed = yes
+    gold_reserves >= 10000
+}

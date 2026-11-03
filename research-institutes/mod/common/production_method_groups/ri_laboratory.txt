@@ -1,0 +1,4 @@
+pmg_ri_laboratory = {
+    texture = "gfx/interface/icons/building_icons/building_university.dds"
+    production_methods = { pm_ri_laboratory pm_ri_research_network }
+}

@@ -1,0 +1,6 @@
+ri_weekly_cost = {
+    value = 1000
+    if = { limit = { var:ri_tier = 2 } value = 3000 }
+    if = { limit = { var:ri_tier = 3 } value = 8000 }
+}
+ri_weekly_debit = { value = ri_weekly_cost multiply = -1 }

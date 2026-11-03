@@ -1,0 +1,38 @@
+ri_apply_research = {
+    if = {
+        limit = { var:ri_focus = 1 var:ri_tier = 1 }
+        add_modifier = { name = ri_production_1 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 1 var:ri_tier = 2 }
+        add_modifier = { name = ri_production_2 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 1 var:ri_tier = 3 }
+        add_modifier = { name = ri_production_3 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 2 var:ri_tier = 1 }
+        add_modifier = { name = ri_military_1 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 2 var:ri_tier = 2 }
+        add_modifier = { name = ri_military_2 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 2 var:ri_tier = 3 }
+        add_modifier = { name = ri_military_3 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 3 var:ri_tier = 1 }
+        add_modifier = { name = ri_society_1 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 3 var:ri_tier = 2 }
+        add_modifier = { name = ri_society_2 days = 8 }
+    }
+    if = {
+        limit = { var:ri_focus = 3 var:ri_tier = 3 }
+        add_modifier = { name = ri_society_3 days = 8 }
+    }
+}

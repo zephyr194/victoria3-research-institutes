@@ -1,0 +1,49 @@
+ri_je = {
+    is_shown_when_inactive = { is_player = yes }
+    possible = { is_player = yes }
+    immediate = { ri_initialize = yes }
+    on_weekly_pulse = { effect = { ri_weekly_tick = yes } }
+    transferable = no
+    can_revolution_inherit = no
+    weight = 10
+    scripted_button = ri_charter_button
+    scripted_button = ri_expand_2_button
+    scripted_button = ri_expand_3_button
+    scripted_button = ri_downgrade_button
+    scripted_button = ri_focus_production_button
+    scripted_button = ri_focus_military_button
+    scripted_button = ri_focus_society_button
+    scripted_button = ri_pause_button
+    scripted_button = ri_resume_button
+    status_desc = {
+        first_valid = {
+            triggered_desc = { desc = ri_status_unchartered trigger = { var:ri_tier = 0 } }
+            triggered_desc = { desc = ri_status_paused trigger = { var:ri_paused = 1 } }
+            triggered_desc = { desc = ri_status_facility trigger = { var:ri_block_reason = 1 } }
+            triggered_desc = { desc = ri_status_funds trigger = { var:ri_block_reason = 2 } }
+            triggered_desc = { desc = ri_status_waiting trigger = { var:ri_operating = 0 } }
+            triggered_desc = { desc = ri_status_production trigger = { var:ri_focus = 1 } }
+            triggered_desc = { desc = ri_status_military trigger = { var:ri_focus = 2 } }
+            triggered_desc = { desc = ri_status_society trigger = { always = yes } }
+        }
+    }
+}
+# Display only: there is exactly one weekly scheduler for both journals.
+ri_exchange_je = {
+    is_shown_when_inactive = { is_player = yes var:ri_tier > 0 }
+    possible = { is_player = yes var:ri_tier > 0 }
+    transferable = no
+    can_revolution_inherit = no
+    weight = 5
+    scripted_button = ri_exchange_button
+    scripted_button = ri_cancel_exchange_button
+    status_desc = {
+        first_valid = {
+            triggered_desc = { desc = ri_exchange_finishing trigger = { var:ri_exchange_weeks = 0 has_modifier = ri_exchange_network } }
+            triggered_desc = { desc = ri_exchange_active trigger = { var:ri_exchange_weeks > 0 } }
+            triggered_desc = { desc = ri_exchange_interrupted trigger = { var:ri_exchange_interrupted = 1 } }
+            triggered_desc = { desc = ri_exchange_cooling trigger = { var:ri_exchange_cooldown > 0 } }
+            triggered_desc = { desc = ri_exchange_ready trigger = { always = yes } }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+bg_ri_research = {
+    parent_group = bg_government
+    is_government_funded = yes
+    economy_of_scale = no
+}

@@ -1,0 +1,64 @@
+ri_charter_button = {
+    name = ri_charter_button
+    desc = ri_charter_button_desc
+    visible = { var:ri_tier = 0 }
+    possible = { ri_can_charter = yes }
+    ai_chance = { base = 0 }
+    effect = { ri_charter = yes }
+}
+ri_expand_2_button = {
+    name = ri_expand_2_button
+    desc = ri_expand_2_button_desc
+    visible = { var:ri_tier = 1 }
+    possible = { ri_can_expand_2 = yes }
+    ai_chance = { base = 0 }
+    effect = { ri_expand_2 = yes }
+}
+ri_expand_3_button = {
+    name = ri_expand_3_button
+    desc = ri_expand_3_button_desc
+    visible = { var:ri_tier = 2 }
+    possible = { ri_can_expand_3 = yes }
+    ai_chance = { base = 0 }
+    effect = { ri_expand_3 = yes }
+}
+ri_downgrade_button = {
+    name = ri_downgrade_button
+    desc = ri_downgrade_button_desc
+    visible = { var:ri_tier > 1 }
+    possible = { var:ri_tier > 1 }
+    ai_chance = { base = 0 }
+    effect = { ri_downgrade = yes }
+}
+ri_pause_button = {
+    name = ri_pause_button
+    desc = ri_pause_button_desc
+    visible = { var:ri_tier > 0 var:ri_paused = 0 }
+    possible = { var:ri_tier > 0 var:ri_paused = 0 }
+    ai_chance = { base = 0 }
+    effect = { ri_pause = yes }
+}
+ri_resume_button = {
+    name = ri_resume_button
+    desc = ri_resume_button_desc
+    visible = { var:ri_tier > 0 var:ri_paused = 1 }
+    possible = { var:ri_tier > 0 var:ri_paused = 1 }
+    ai_chance = { base = 0 }
+    effect = { ri_resume = yes }
+}
+ri_exchange_button = {
+    name = ri_exchange_button
+    desc = ri_exchange_button_desc
+    visible = { var:ri_tier > 0 var:ri_exchange_weeks = 0 }
+    possible = { ri_can_start_exchange = yes }
+    ai_chance = { base = 0 }
+    effect = { ri_start_exchange = yes }
+}
+ri_cancel_exchange_button = {
+    name = ri_cancel_exchange_button
+    desc = ri_cancel_exchange_button_desc
+    visible = { var:ri_exchange_weeks > 0 }
+    possible = { var:ri_exchange_weeks > 0 }
+    ai_chance = { base = 0 }
+    effect = { ri_cancel_exchange = yes }
+}

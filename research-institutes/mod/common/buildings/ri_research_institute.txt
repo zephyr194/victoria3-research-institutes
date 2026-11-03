@@ -1,0 +1,15 @@
+# Use the names found in game scripts; shared documentation calls the PM list production_methods.
+building_ri_research_institute = {
+    building_group = bg_ri_research
+    icon = "gfx/interface/icons/building_icons/building_university.dds"
+    required_construction = 300
+    production_method_groups = { pmg_ri_laboratory }
+    ownership_type = no_ownership
+    buildable = yes
+    expandable = yes
+    downsizeable = yes
+    can_build_government = { always = yes }
+    can_build_private = { always = no }
+    city_type = city
+    ai_value = 0
+}
